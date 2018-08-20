@@ -7,25 +7,28 @@ import "react-day-picker/lib/style.css";
 // http://react-day-picker.js.org/docs/matching-days/
 // https://codesandbox.io/s/r5w1kv3k6o
 class Calendar extends Component {
-  highlighted = day => {
-    // Clear time to compare by date
-    day.setHours(0, 0, 0);
-
-    return this.props.selectedDays.some(selectedDay => {
-      // Clear time to compare by date
-      selectedDay.setHours(0, 0, 0);
-      return selectedDay.getTime() === day.getTime();
-    });
+  isSameDate = (d1, d2) => {
+    if (!d1 || !d2) return false;
+    return d1.toDateString() === d2.toDateString();
   };
+
+  highlighted = day =>
+    this.props.selectedDays.some(selectedDay =>
+      this.isSameDate(day, selectedDay)
+    );
 
   // https://stackoverflow.com/a/47388600/4035
   render() {
-    const { selectedDay } = this.props;
+    const { selectedDate } = this.props;
 
     return (
       <DayPicker
-        modifiers={{ highlighted: this.highlighted, selectedDay }}
-        onDayClick={e => actions.app.setSelectedDate(e)}
+        modifiers={{ highlighted: this.highlighted, selectedDate }}
+        onDayClick={clickedDate => {
+          this.isSameDate(selectedDate, clickedDate)
+            ? actions.app.clearSelectedDate()
+            : actions.app.setSelectedDate(clickedDate);
+        }}
       />
     );
   }
@@ -38,6 +41,7 @@ const extractDates = data =>
   }, []);
 
 const mapStateToProps = state => ({
-  selectedDays: extractDates(state.app.data)
+  selectedDays: extractDates(state.app.data),
+  selectedDate: state.app.selectedDate
 });
 export default connect(mapStateToProps)(Calendar);

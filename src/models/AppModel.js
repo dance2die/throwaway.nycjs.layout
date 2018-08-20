@@ -18,7 +18,6 @@ export default mirror.model({
       return { ...state, selectedDate: null };
     },
     setSelectedDate(state, selectedDate) {
-      console.log(`selectedDate`, selectedDate);
       return { ...state, selectedDate };
     },
     addData(state, data) {
