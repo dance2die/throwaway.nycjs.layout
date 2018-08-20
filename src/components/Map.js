@@ -142,5 +142,5 @@ class Map extends Component {
   }
 }
 
-const mapStateToProps = state => ({ data: state.app.data });
+const mapStateToProps = state => ({ data: state.app.filteredData });
 export default connect(mapStateToProps)(Map);

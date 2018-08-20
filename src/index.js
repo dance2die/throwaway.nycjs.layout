@@ -2,9 +2,10 @@
  * ToDos
  * 1. ✅ Create group name checkbox list from `data` props
  * 2. ✅ Set Calendar selected days from `data` props
- * 3. 🚫 Update Map markers according to
- *    3.1 🚫 Currently selected calendar day
- *    3.2 🚫 Currently checked group names
+ * 3. ✅ Update Map markers according to
+ *    3.1 ✅ Currently selected calendar day
+ *    3.2 ✅ Currently checked group names
+ * 4. 🚫 Implemente data filters (in AppModel)
  */
 
 import React, { Component, Fragment } from "react";
@@ -68,7 +69,7 @@ const ListContainer = styled.div``;
 
 const Meetup = styled.li``;
 
-const meetups = { reactnyc: "React NYC", vueJsNYC: "Vue NYC" };
+const meetups = { ReactNYC: "React NYC", vueJsNYC: "Vue NYC" };
 
 class App extends Component {
   // // Set the date selected on the calendar
@@ -79,6 +80,7 @@ class App extends Component {
   // Initialize Meetup records globally
   componentWillMount() {
     actions.app.addData(data);
+    actions.app.filterData();
     actions.app.addGroups(meetups);
     actions.app.setSelectedDate(new Date());
   }
@@ -101,7 +103,7 @@ class App extends Component {
             </ListContainer>
           </FilterContainer>
           <MapContainer>
-            <Map data={this.props.data} />
+            <Map />
           </MapContainer>
         </Body>
         <Footer>

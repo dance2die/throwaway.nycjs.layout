@@ -11,6 +11,7 @@ const MeetupList = styled.ul`
 const onGroupChecked = e => {
   e.persist();
   actions.app.onGroupChecked(e);
+  actions.app.filterData();
 };
 
 const Meetup = ({ name, value, selectedGroups }) => (

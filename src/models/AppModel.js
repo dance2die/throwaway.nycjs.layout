@@ -1,14 +1,40 @@
 import mirror, { actions } from "mirrorx";
 
+const byDates = (key, data) => {
+  return true;
+};
+
 export default mirror.model({
   name: "app",
   initialState: {
     selectedGroups: {},
     groups: {},
     data: {},
-    selectedDate: null
+    selectedDate: null,
+    filteredData: null
   },
   reducers: {
+    filterData(state) {
+      const byGroups = (acc, [key, value]) => {
+        if (state.selectedGroups[key]) {
+          acc[key] = value;
+        }
+        return acc;
+      };
+
+      if (state.filteredData) {
+        const filteredData = Object.entries(state.data).reduce(byGroups, {});
+        return { ...state, filteredData };
+      } else {
+        return { ...state, filteredData: state.data };
+      }
+    },
+    getData(state) {
+      return {
+        ...state,
+        data: state.data
+      };
+    },
     onGroupChecked(state, e) {
       const selectedGroups = { ...state.selectedGroups };
       selectedGroups[e.target.name] = !selectedGroups[e.target.name];
@@ -31,15 +57,6 @@ export default mirror.model({
       }, {});
 
       return { ...state, groups, selectedGroups };
-    },
-    // addSelectedGroups(state, selectedGroups) {
-    //   return { ...state, selectedGroups };
-    // },
-    getData(state) {
-      return {
-        ...state,
-        data: state.data
-      };
     },
     getSelectedGroups(state) {
       return {

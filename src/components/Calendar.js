@@ -17,18 +17,21 @@ class Calendar extends Component {
       this.isSameDate(day, selectedDay)
     );
 
+  onDayClick = clickedDate => {
+    const { selectedDate } = this.props;
+    actions.app.filterData();
+    this.isSameDate(selectedDate, clickedDate)
+      ? actions.app.clearSelectedDate()
+      : actions.app.setSelectedDate(clickedDate);
+  };
+
   // https://stackoverflow.com/a/47388600/4035
   render() {
     const { selectedDate } = this.props;
-
     return (
       <DayPicker
         modifiers={{ highlighted: this.highlighted, selectedDate }}
-        onDayClick={clickedDate => {
-          this.isSameDate(selectedDate, clickedDate)
-            ? actions.app.clearSelectedDate()
-            : actions.app.setSelectedDate(clickedDate);
-        }}
+        onDayClick={this.onDayClick}
       />
     );
   }
@@ -41,7 +44,7 @@ const extractDates = data =>
   }, []);
 
 const mapStateToProps = state => ({
-  selectedDays: extractDates(state.app.data),
+  selectedDays: extractDates(state.app.filteredData),
   selectedDate: state.app.selectedDate
 });
 export default connect(mapStateToProps)(Calendar);
