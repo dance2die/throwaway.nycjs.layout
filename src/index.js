@@ -1,7 +1,7 @@
 /**
  * ToDos
- * 1. 🚫 Create group name checkbox list from `data` props
- * 2. 🚫 Set Calendar selected days from `data` props
+ * 1. ✅ Create group name checkbox list from `data` props
+ * 2. ✅ Set Calendar selected days from `data` props
  * 3. 🚫 Update Map markers according to
  *    3.1 🚫 Currently selected calendar day
  *    3.2 🚫 Currently checked group names
@@ -71,52 +71,30 @@ const Meetup = styled.li``;
 const meetups = { reactnyc: "React NYC", vueJsNYC: "Vue NYC" };
 
 class App extends Component {
-  // Set the date selected on the calendar
-  onDayClick = e => {
-    actions.app.setDate(e);
-  };
+  // // Set the date selected on the calendar
+  // onDayClick = e => {
+  //   actions.app.setDate(e);
+  // };
 
   // Initialize Meetup records globally
   componentWillMount() {
     actions.app.addData(data);
     actions.app.addGroups(meetups);
-    // actions.app.addSelectedGroups(
-    //   Object.keys(meetups).reduce((acc, key) => {
-    //     acc[key] = true;
-    //     return acc;
-    //   }, {})
-    // );
-    actions.app.setDate(new Date());
+    actions.app.setSelectedDate(new Date());
   }
 
   componentDidCatch(err, info) {
     console.log(`err, info`, err, info);
   }
 
-  getSelectedDays = () => {
-    const selectedDays = [
-      new Date(2018, 7, 2),
-      new Date(2018, 7, 3),
-      new Date(2018, 7, 21),
-      new Date(2018, 7, 12),
-      new Date(2018, 7, 19)
-    ];
-    return selectedDays;
-  };
-
   render() {
-    // console.log(`this.props`, this.props);
-
     return (
       <AppContainer>
         <Header>NYC JavaScript Meetups</Header>
         <Body>
           <FilterContainer>
             <CalendarContainer>
-              <Calendar
-                selectedDays={this.getSelectedDays()}
-                onDayClick={this.onDayClick}
-              />
+              <Calendar />
             </CalendarContainer>
             <ListContainer>
               <Meetups />

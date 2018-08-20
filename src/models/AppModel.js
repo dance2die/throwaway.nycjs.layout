@@ -6,7 +6,7 @@ export default mirror.model({
     selectedGroups: {},
     groups: {},
     data: {},
-    date: new Date()
+    selectedDate: null
   },
   reducers: {
     onGroupChecked(state, e) {
@@ -14,8 +14,12 @@ export default mirror.model({
       selectedGroups[e.target.name] = !selectedGroups[e.target.name];
       return { ...state, selectedGroups };
     },
-    setDate(state, date) {
-      return { ...state, date };
+    clearSelectedDate(state) {
+      return { ...state, selectedDate: null };
+    },
+    setSelectedDate(state, selectedDate) {
+      console.log(`selectedDate`, selectedDate);
+      return { ...state, selectedDate };
     },
     addData(state, data) {
       return { ...state, data };

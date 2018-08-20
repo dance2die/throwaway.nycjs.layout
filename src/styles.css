@@ -4,6 +4,11 @@
 }
 
 .DayPicker-Day--highlighted {
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid white;
   color: black;
+}
+
+.DayPicker-Day--selectedDay {
+  background-color: orange;
+  color: white;
 }
