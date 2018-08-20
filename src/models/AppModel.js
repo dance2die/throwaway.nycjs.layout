@@ -4,6 +4,7 @@ export default mirror.model({
   name: "app",
   initialState: {
     selectedGroups: {},
+    groups: {},
     data: {},
     date: new Date()
   },
@@ -19,9 +20,18 @@ export default mirror.model({
     addData(state, data) {
       return { ...state, data };
     },
-    addSelectedGroups(state, selectedGroups) {
-      return { ...state, selectedGroups };
+    addGroups(state, groups) {
+      // Initialize all groups as selected by default
+      const selectedGroups = Object.keys(groups).reduce((acc, key) => {
+        acc[key] = true;
+        return acc;
+      }, {});
+
+      return { ...state, groups, selectedGroups };
     },
+    // addSelectedGroups(state, selectedGroups) {
+    //   return { ...state, selectedGroups };
+    // },
     getData(state) {
       return {
         ...state,

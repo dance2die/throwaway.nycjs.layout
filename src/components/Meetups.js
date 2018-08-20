@@ -27,13 +27,16 @@ const Meetup = ({ name, value, selectedGroups }) => (
   </li>
 );
 
-const mapStateToProps = state => ({ selectedGroups: state.app.selectedGroups });
+const mapStateToProps = state => ({
+  selectedGroups: state.app.selectedGroups,
+  groups: state.app.groups
+});
 const ConnectedMeetup = connect(mapStateToProps)(Meetup);
 
-const Meetups = ({ meetups }) => (
+const Meetups = ({ selectedGroups, groups }) => (
   <MeetupList>
-    {Object.keys(meetups).map(key => (
-      <ConnectedMeetup key={key} name={key} value={meetups[key]} />
+    {Object.keys(selectedGroups).map(key => (
+      <ConnectedMeetup key={key} name={key} value={groups[key]} />
     ))}
   </MeetupList>
 );

@@ -1,3 +1,12 @@
+/**
+ * ToDos
+ * 1. 🚫 Create group name checkbox list from `data` props
+ * 2. 🚫 Set Calendar selected days from `data` props
+ * 3. 🚫 Update Map markers according to
+ *    3.1 🚫 Currently selected calendar day
+ *    3.2 🚫 Currently checked group names
+ */
+
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import styled, { injectGlobal } from "styled-components";
@@ -6,6 +15,7 @@ import mirror, { actions, connect, render } from "mirrorx";
 import "./models/AppModel";
 import Calendar from "./components/Calendar";
 import Meetups from "./components/Meetups";
+import Map from "./components/Map";
 
 import data from "./input.json";
 
@@ -69,12 +79,13 @@ class App extends Component {
   // Initialize Meetup records globally
   componentWillMount() {
     actions.app.addData(data);
-    actions.app.addSelectedGroups(
-      Object.keys(meetups).reduce((acc, key) => {
-        acc[key] = true;
-        return acc;
-      }, {})
-    );
+    actions.app.addGroups(meetups);
+    // actions.app.addSelectedGroups(
+    //   Object.keys(meetups).reduce((acc, key) => {
+    //     acc[key] = true;
+    //     return acc;
+    //   }, {})
+    // );
     actions.app.setDate(new Date());
   }
 
@@ -108,10 +119,12 @@ class App extends Component {
               />
             </CalendarContainer>
             <ListContainer>
-              <Meetups meetups={meetups} />
+              <Meetups />
             </ListContainer>
           </FilterContainer>
-          <MapContainer>Content</MapContainer>
+          <MapContainer>
+            <Map data={this.props.data} />
+          </MapContainer>
         </Body>
         <Footer>
           Created By
