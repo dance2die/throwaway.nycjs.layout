@@ -1,0 +1,395 @@
+{
+  "ReactNYC": {
+    "group": {
+      "utc_offset": -14400000,
+      "country": "US",
+      "visibility": "public",
+      "city": "New York",
+      "timezone": "US/Eastern",
+      "created": 1489527321000,
+      "topics": [
+        {
+          "urlkey": "javascript",
+          "name": "JavaScript",
+          "id": 7029
+        },
+        {
+          "urlkey": "web",
+          "name": "Web Technology",
+          "id": 10209
+        },
+        {
+          "urlkey": "web-development",
+          "name": "Web Development",
+          "id": 15582
+        },
+        {
+          "urlkey": "javascript-libraries",
+          "name": "JavaScript Libraries",
+          "id": 56555
+        },
+        {
+          "urlkey": "html5",
+          "name": "HTML5",
+          "id": 78565
+        },
+        {
+          "urlkey": "javascript-frameworks",
+          "name": "JavaScript Frameworks",
+          "id": 85951
+        },
+        {
+          "urlkey": "front-end-development",
+          "name": "Front-end Development",
+          "id": 100479
+        },
+        {
+          "urlkey": "javascript-applications",
+          "name": "JavaScript Applications",
+          "id": 964072
+        },
+        {
+          "urlkey": "reactjs",
+          "name": "ReactJS",
+          "id": 1504812
+        },
+        {
+          "urlkey": "react-native",
+          "name": "React Native",
+          "id": 1505697
+        },
+        {
+          "urlkey": "react",
+          "name": "React",
+          "id": 1513059
+        }
+      ],
+      "link": "https://www.meetup.com/ReactNYC/",
+      "rating": 4.78,
+      "description": "<p>This is a group for React and React Native developers in NYC</p> \n<p>Check out our YouTube channel &lt;br&gt;<a href=\"https://youtube.com/ReactNYC\">youtube.com/ReactNYC</a></p>",
+      "lon": -73.98999786376953,
+      "group_photo": {
+        "highres_link": "https://secure.meetupstatic.com/photos/event/4/c/9/highres_459121225.jpeg",
+        "photo_id": 459121225,
+        "base_url": "https://secure.meetupstatic.com",
+        "type": "event",
+        "photo_link": "https://secure.meetupstatic.com/photos/event/4/c/9/600_459121225.jpeg",
+        "thumb_link": "https://secure.meetupstatic.com/photos/event/4/c/9/thumb_459121225.jpeg"
+      },
+      "join_mode": "open",
+      "organizer": {
+        "member_id": 137808612,
+        "name": "Ilya Gelman",
+        "photo": {
+          "highres_link": "https://secure.meetupstatic.com/photos/member/a/9/b/2/highres_242143442.jpeg",
+          "photo_id": 242143442,
+          "base_url": "https://secure.meetupstatic.com",
+          "type": "member",
+          "photo_link": "https://secure.meetupstatic.com/photos/member/a/9/b/2/member_242143442.jpeg",
+          "thumb_link": "https://secure.meetupstatic.com/photos/member/a/9/b/2/thumb_242143442.jpeg"
+        }
+      },
+      "members": 4821,
+      "name": "React NYC",
+      "id": 22884788,
+      "state": "NY",
+      "urlname": "ReactNYC",
+      "category": {
+        "name": "tech",
+        "id": 34,
+        "shortname": "tech"
+      },
+      "lat": 40.75,
+      "who": "Members"
+    },
+    "events": [
+      {
+        "utc_offset": -14400000,
+        "venue": {
+          "zip": "10012",
+          "country": "us",
+          "localized_country_name": "USA",
+          "city": "New York",
+          "address_1": "568 Broadway #901",
+          "name": "ZocDoc",
+          "lon": -73.997459,
+          "id": 3388002,
+          "state": "NY",
+          "lat": 40.724365,
+          "repinned": false
+        },
+        "rsvp_limit": 300,
+        "headcount": 0,
+        "visibility": "public",
+        "waitlist_count": 7,
+        "created": 1533159031000,
+        "maybe_rsvp_count": 0,
+        "description": "<p>Using Finite State Machines To Develop Your React Application<br/>🎤 Lucas Reis</p> <p>In the React world, we have been obsessed with how to manage our state. There are lots of material on helping people choose between Redux, Mobx, or vanilla React state. But not a lot of attention has been given to state design. In this talk, I present Finite State Machines and how they can be a great tool to help you develop reliable components, understand your application state, and even communicating and collaborating with non-developers.</p> <p>Serverless And React (It's Just Sleight Of Hand)<br/>🎤 Marina Miranovich</p> <p>I bet, it's not a first time when you meet a word 'serverless', but I still hope that this time I persuade you to try it out. And for those who are familiar with AWS lambdas already I have a few handy tricks and tools to share. In my presentation, I'll show how to render and deploy an isomorphic React Redux application on AWS Lambda step by step.</p> <p>FLIP It… FLIP It Good<br/>🎤 Alex Holachek</p> <p>The FLIP technique helps us create performant animations that can make our UIs more beautiful and intuitive. First, I’ll review the basics -- what FLIP is and how it's implemented. Next, I’ll discuss why FLIP works particularly well with React’s lifecycle methods and its declarative approach to building the DOM. Finally, I’ll survey various types of FLIP animations, from the simple to the more advanced, as well a library I’ve been working on, react-flip-toolkit, that facilitates the implementation of complex FLIP animations in React.</p>",
+        "how_to_find_us": "9th Floor",
+        "event_url": "https://www.meetup.com/ReactNYC/events/253389660/",
+        "yes_rsvp_count": 300,
+        "duration": 10800000,
+        "name": "ReactNYC: BC2dRkm8ATU",
+        "id": "253389660",
+        "photo_url": "https://secure.meetupstatic.com/photos/event/6/0/9/2/global_473544722.jpeg",
+        "time": 1534975200000,
+        "updated": 1533755957000,
+        "group": {
+          "join_mode": "open",
+          "created": 1489527321000,
+          "name": "React NYC",
+          "group_lon": -73.98999786376953,
+          "id": 22884788,
+          "urlname": "ReactNYC",
+          "group_lat": 40.75,
+          "who": "Members"
+        },
+        "status": "upcoming"
+      },
+      {
+        "utc_offset": -14400000,
+        "venue": {
+          "zip": "10041",
+          "country": "us",
+          "localized_country_name": "USA",
+          "city": "New York",
+          "address_1": "55 Water Street",
+          "name": "LADDERS",
+          "lon": -74.009369,
+          "id": 25161604,
+          "state": "NY",
+          "lat": 40.703194,
+          "repinned": false
+        },
+        "rsvp_limit": 1,
+        "headcount": 0,
+        "visibility": "public",
+        "waitlist_count": 17,
+        "created": 1531941991000,
+        "maybe_rsvp_count": 0,
+        "description": "<p>💸 We are charging $10 to ensure attendance. No refunds.</p> <p>🔗 REGISTER HERE: <a href=\"https://arcmc.eventbrite.com\" class=\"linkified\">https://arcmc.eventbrite.com</a></p> <p>React is the most popular library to build User Interfaces in 2018. Thousands of engineers are using it every day.<br/>If you want to become a better React developer, you need to peek under the hood and understand how React works.<br/>During this session, we will demystify React core concepts by live coding a lean React and React DOM clone from scratch.</p> <p>Target audience<br/>This Master Class is aimed at React developers of any level of experience.</p> <p>Agenda:<br/>- 6: Welcome!<br/>- 6:30: Master Class starts<br/>- 8: Q&amp;A<br/>- 8:30: Thank you!</p> <p>What to Expect:<br/>- Lecture<br/>- Live coding<br/>- Food and drinks<br/>- Having a good time</p> <p>🗣 Your instructor: Nir Kaufman<br/>Principal front-end consultant at 500Tech and Google Developer Expert of web technologies. For the past five years, Nir has trained hundreds of development teams around the world from leading companies such as Intel, Microsoft, Dell, Phillips, Siemens, and HP, to name a few.<br/>Nir was selected as the trainer of the year for 2017 in Europe.</p> <p>Find out about other things we do on our website: <a href=\"https://500tech.com\" class=\"linkified\">https://500tech.com</a></p> <p>🔗 REGISTER HERE: <a href=\"https://arcmc.eventbrite.com\" class=\"linkified\">https://arcmc.eventbrite.com</a></p>",
+        "event_url": "https://www.meetup.com/ReactNYC/events/252910923/",
+        "yes_rsvp_count": 4,
+        "duration": 10800000,
+        "name": "[MasterClass] Advanced React Concepts",
+        "id": "252910923",
+        "photo_url": "https://secure.meetupstatic.com/photos/event/6/1/0/6/global_473544838.jpeg",
+        "time": 1536616800000,
+        "updated": 1533585296000,
+        "group": {
+          "join_mode": "open",
+          "created": 1489527321000,
+          "name": "React NYC",
+          "group_lon": -73.98999786376953,
+          "id": 22884788,
+          "urlname": "ReactNYC",
+          "group_lat": 40.75,
+          "who": "Members"
+        },
+        "status": "upcoming"
+      },
+      {
+        "utc_offset": -14400000,
+        "venue": {
+          "country": "us",
+          "localized_country_name": "USA",
+          "city": "New York",
+          "address_1": "110 William St, 28th floor",
+          "name": "Stack Overflow",
+          "lon": -74.006729,
+          "id": 24723224,
+          "state": "NY",
+          "lat": 40.708775,
+          "repinned": false
+        },
+        "headcount": 0,
+        "visibility": "public",
+        "waitlist_count": 0,
+        "created": 1533830828000,
+        "maybe_rsvp_count": 0,
+        "description": "<p>Please register here: <a href=\"http://bit.ly/graphhack2018\" class=\"linkified\">http://bit.ly/graphhack2018</a></p> <p>This event is in partnership with our friends at:<br/>Neo4j NYC <a href=\"https://www.meetup.com/nycneo4j/\" class=\"linkified\">https://www.meetup.com/nycneo4j/</a><br/>React NYC <a href=\"https://www.meetup.com/ReactNYC/\" class=\"linkified\">https://www.meetup.com/ReactNYC/</a><br/>WiMLDS NYC <a href=\"https://www.meetup.com/NYC-Women-in-Machine-Learning-Data-Science/\" class=\"linkified\">https://www.meetup.com/NYC-Women-in-Machine-Learning-Data-Science/</a><br/>PyLadies NYC <a href=\"https://www.meetup.com/NYC-PyLadies/\" class=\"linkified\">https://www.meetup.com/NYC-PyLadies/</a><br/>Kubernetes NYC <a href=\"https://www.meetup.com/New-York-Kubernetes-Meetup/\" class=\"linkified\">https://www.meetup.com/New-York-Kubernetes-Meetup/</a><br/>Google Developers BX <a href=\"https://www.meetup.com/GDG-Bronx\" class=\"linkified\">https://www.meetup.com/GDG-Bronx</a><br/>GraphQL NYC <a href=\"https://www.meetup.com/GraphQL-NYC/\" class=\"linkified\">https://www.meetup.com/GraphQL-NYC/</a><br/>JS NYC <a href=\"https://www.meetup.com/JS-NYC/\" class=\"linkified\">https://www.meetup.com/JS-NYC/</a><br/>500 Tech <a href=\"https://500tech.com/\" class=\"linkified\">https://500tech.com/</a><br/>Byte Academy <a href=\"https://byteacademy.co/\" class=\"linkified\">https://byteacademy.co/</a><br/>edchain www.edchain.io<br/>Neo4j <a href=\"https://neo4j.com/\" class=\"linkified\">https://neo4j.com/</a><br/>Stack Overflow <a href=\"https://stackoverflow.com/\" class=\"linkified\">https://stackoverflow.com/</a></p> <p>Join other graph hackers for a fun day of building applications featuring Neo4j's great integrations with popular technologies (aka Buzzwords)!</p> <p>**Agenda:**</p> <p>Workshop (Optional): 9am-10am (includes breakfast)<br/>GraphHack: 10:00am-3:00pm (includes lunch)<br/>10:00-10:30 - teams form<br/>10:30-11:00 - presentation / kickoff<br/>11:00-3:00 - hacking<br/>Presentations: 3:00pm-4:00pm<br/>GraphHack cocktail hour: 4:00pm</p> <p>This year we thought it would be fun to highlight many of the useful Neo4j integrations with other technologies in a “Buzzword BINGO” format. This means that teams will be building applications using Neo4j and other technologies listed on their BINGO cards. (see pic) . Each team must make a BINGO (four in a row vertically, horizontally, or diagonally) for a valid hackathon submission.</p> <p>Not currently a graph hacker, or want to learn more? Come early (9am-10am) for a hands-on workshop covering an intro to Neo4j and an overview of many of our popular \"buzzwords\" - also known as technology integrations that make building applications with Neo4j easier :-)</p> <p>You'll need to bring a laptop that can be used for development and have Neo4j installed.</p> <p>**Steps:**</p> <p>0. (optional) Intro workshop. Come to the 1-hour intro to Neo4j workshop.</p> <p>1. Choose your team. &gt;<br/>Have a team already? Register your team in advance here <a href=\"https://hackdash.org/dashboards/graphbuzz\" class=\"linkified\">https://hackdash.org/dashboards/graphbuzz</a> . Don't have a team? Don't worry! We'll be forming teams onsite. Bring an idea for a cool project and find others who want to hack on it with you. Don't have an idea? Watch others pitch ideas and find a fun project you want to work on</p> <p>2. Choose your bingo card. Find a BINGO option of neo4j buzzwords. Your submission must make a BINGO using the buzzwords on the card.</p> <p>3. Present! Present your graph hack.</p> <p>4. Win! Our esteemed panel of judges will be awarding team prizes.</p> <p>**Rules:**</p> <p>You must join a team . (it's OK to come alone, meet new friends, etc)</p> <p>You must present at the end of the day for a chance to win</p> <p>Please include a slide or diagram that shows the different “Buzzwords”(integrations) your team used</p> <p>A valid submission should use a combination of technologies listed on their bingo card that make a bingo (4 in a row vertically, horizontally, or diagonally)</p> <p>You must register your team on the HackDash board <a href=\"https://hackdash.org/dashboards/graphbuzz\" class=\"linkified\">https://hackdash.org/dashboards/graphbuzz</a> so we can keep track of your team</p> <p>Please include the buzzwords used on HackDash</p> <p>(this card is only an example)</p> <p>**Prizes**</p> <p>Airpods</p> <p>Echo Show</p> <p>Nest Camera</p> <p>BB8 Droid</p> <p>Drones</p> <p>Google Home</p> <p>Echo Dot</p> <p>And more!</p> <p>**Categories**</p> <p>Most complete application</p> <p>Best use of cypher</p> <p>Most buzzwords used</p> <p>Best Fully Functional Application</p>",
+        "how_to_find_us": "Please bring your photo ID",
+        "event_url": "https://www.meetup.com/ReactNYC/events/253647861/",
+        "yes_rsvp_count": 20,
+        "duration": 25200000,
+        "name": "GraphHack 2018: Neo4j Buzzword Bingo Hackathon",
+        "id": "253647861",
+        "photo_url": "https://secure.meetupstatic.com/photos/event/8/0/6/0/global_473612864.jpeg",
+        "time": 1537621200000,
+        "updated": 1533831756000,
+        "group": {
+          "join_mode": "open",
+          "created": 1489527321000,
+          "name": "React NYC",
+          "group_lon": -73.98999786376953,
+          "id": 22884788,
+          "urlname": "ReactNYC",
+          "group_lat": 40.75,
+          "who": "Members"
+        },
+        "status": "upcoming"
+      }
+    ]
+  },
+  "vueJsNYC": {
+    "group": {
+      "utc_offset": -14400000,
+      "country": "US",
+      "visibility": "public",
+      "city": "New York",
+      "timezone": "US/Eastern",
+      "created": 1492144047000,
+      "topics": [
+        {
+          "urlkey": "opensource",
+          "name": "Open Source",
+          "id": 563
+        },
+        {
+          "urlkey": "softwaredev",
+          "name": "Software Development",
+          "id": 3833
+        },
+        {
+          "urlkey": "javascript",
+          "name": "JavaScript",
+          "id": 7029
+        },
+        {
+          "urlkey": "newtech",
+          "name": "New Technology",
+          "id": 9696
+        },
+        {
+          "urlkey": "web",
+          "name": "Web Technology",
+          "id": 10209
+        },
+        {
+          "urlkey": "web-development",
+          "name": "Web Development",
+          "id": 15582
+        },
+        {
+          "urlkey": "computer-programming",
+          "name": "Computer programming",
+          "id": 48471
+        },
+        {
+          "urlkey": "html5",
+          "name": "HTML5",
+          "id": 78565
+        },
+        {
+          "urlkey": "javascript-frameworks",
+          "name": "JavaScript Frameworks",
+          "id": 85951
+        },
+        {
+          "urlkey": "front-end-development",
+          "name": "Front-end Development",
+          "id": 100479
+        },
+        {
+          "urlkey": "angularjs",
+          "name": "AngularJS",
+          "id": 939612
+        },
+        {
+          "urlkey": "reactjs",
+          "name": "ReactJS",
+          "id": 1504812
+        },
+        {
+          "urlkey": "vue-js",
+          "name": "Vue.js",
+          "id": 1511132
+        },
+        {
+          "urlkey": "react",
+          "name": "React",
+          "id": 1513059
+        }
+      ],
+      "link": "https://www.meetup.com/vueJsNYC/",
+      "rating": 4.88,
+      "description": "<p>VueJS is the second most popular UI framework in the world (counting by amount of stars on GitHub).</p>\n<p><b>VueNYC</b> is the first meetup in New York City that focuses on VueJS and its ecosystem.</p>\n<p>•&nbsp;Subscribe to our&nbsp;<a href=\"https://youtube.com/VueNYC\">YouTube channel&nbsp;(youtube.com/VueNYC)</a> <br></p>\n<p>• Support <a href=\"https://opencollective.com/vuejs\">Vue on OpenCollective</a> <br></p>\n<br>\n<p>Are you using Vue or considering to? Let's meet to share our experiences, ideas and practices!</p>\n<p><span>We're working hard on putting together out next event and will have some news for you soon!</span> <br></p>\n<p>Please reach out to us if you know potential speakers or location!</p>\n<p> <br></p>\n<p><b>Code of Conduct&nbsp;</b></p>\n<p>We expect all speakers and attendees to follow the&nbsp;<a href=\"http://jsconf.com/codeofconduct.html\">JSConf code of conduct</a>.</p>\n<br>",
+      "lon": -73.98999786376953,
+      "group_photo": {
+        "highres_link": "https://secure.meetupstatic.com/photos/event/e/a/3/6/highres_469019958.jpeg",
+        "photo_id": 469019958,
+        "base_url": "https://secure.meetupstatic.com",
+        "type": "event",
+        "photo_link": "https://secure.meetupstatic.com/photos/event/e/a/3/6/600_469019958.jpeg",
+        "thumb_link": "https://secure.meetupstatic.com/photos/event/e/a/3/6/thumb_469019958.jpeg"
+      },
+      "join_mode": "open",
+      "organizer": {
+        "member_id": 14429094,
+        "name": "Kirill Cherkashin",
+        "photo": {
+          "base_url": "https://secure.meetupstatic.com",
+          "photo_id": 99812912,
+          "type": "member",
+          "photo_link": "https://secure.meetupstatic.com/photos/member/8/0/9/0/member_99812912.jpeg",
+          "thumb_link": "https://secure.meetupstatic.com/photos/member/8/0/9/0/thumb_99812912.jpeg"
+        }
+      },
+      "members": 1046,
+      "name": "VueNYC",
+      "id": 23275212,
+      "state": "NY",
+      "urlname": "vueJsNYC",
+      "category": {
+        "name": "tech",
+        "id": 34,
+        "shortname": "tech"
+      },
+      "lat": 40.75,
+      "who": "Vuenthusiasts"
+    },
+    "events": [
+      {
+        "utc_offset": -14400000,
+        "venue": {
+          "country": "us",
+          "localized_country_name": "USA",
+          "city": "New York",
+          "address_1": "45 West 18th St (7th Floor)",
+          "name": "Spotify",
+          "lon": -73.99323,
+          "id": 23897339,
+          "state": "NY",
+          "lat": 40.73916,
+          "repinned": true
+        },
+        "rsvp_limit": 30,
+        "headcount": 0,
+        "visibility": "public",
+        "waitlist_count": 30,
+        "created": 1528596426000,
+        "maybe_rsvp_count": 0,
+        "description": "<p>This month VueNYC is teaming up with Vue Vixens and Particle Photon to host a mobile X hardware Vue workshop for women! On top of that, five lucky meetup members will have a chance to go home with a Photon developer kit courtesy of our partners at Particle.io!</p> <p>👭👭👭 NOTE: THIS WORKSHOP IS RUN BY AND FOR WOMEN 💪💪💪</p> <p>⚠️⚠️⚠️ If you're interested in participating, YOU MUST ALSO SIGN UP ON THE VUE VIXEN ATTENDEE REGISTRATION PAGE HERE: <a href=\"https://vuevixens.org/events/vuemeetupnyc\" class=\"linkified\">https://vuevixens.org/events/vuemeetupnyc</a> ⚠️⚠️⚠️</p> <p>---------</p> <p>🎶🎶🎶 Special thanks to Josh and our awesome host Spotify!!! 🙌🙌🙌</p> <p>🤓🤓🤓 Thanks also to our wonderful mentors Anna, Ian, Matt, Sarah, and Tessa! 📚📚📚</p>",
+        "how_to_find_us": "7th floor",
+        "event_url": "https://www.meetup.com/vueJsNYC/events/251602765/",
+        "yes_rsvp_count": 30,
+        "duration": 10800000,
+        "name": "VueNYC #13: Vulpix or It Didn't Happen",
+        "id": "251602765",
+        "time": 1535493600000,
+        "updated": 1534270445000,
+        "group": {
+          "join_mode": "open",
+          "created": 1492144047000,
+          "name": "VueNYC",
+          "group_lon": -73.98999786376953,
+          "id": 23275212,
+          "urlname": "vueJsNYC",
+          "group_lat": 40.75,
+          "who": "Vuenthusiasts"
+        },
+        "status": "upcoming"
+      }
+    ]
+  }
+}

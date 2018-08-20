@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.DayPicker-Day--highlighted {
+  border-bottom: 1px solid green;
+  color: black;
+}
