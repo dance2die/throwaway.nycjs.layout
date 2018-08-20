@@ -2,32 +2,31 @@ import React, { Component, Fragment } from "react";
 import DayPicker from "react-day-picker";
 import { connect, actions } from "mirrorx";
 
+import { isSameDate } from "../utils/date";
+
 import "react-day-picker/lib/style.css";
 
 // http://react-day-picker.js.org/docs/matching-days/
 // https://codesandbox.io/s/r5w1kv3k6o
 class Calendar extends Component {
-  isSameDate = (d1, d2) => {
-    if (!d1 || !d2) return false;
-    return d1.toDateString() === d2.toDateString();
-  };
-
   highlighted = day =>
-    this.props.selectedDays.some(selectedDay =>
-      this.isSameDate(day, selectedDay)
-    );
+    this.props.eventDays.some(selectedDay => isSameDate(day, selectedDay));
 
   onDayClick = clickedDate => {
     const { selectedDate } = this.props;
-    actions.app.filterData();
-    this.isSameDate(selectedDate, clickedDate)
-      ? actions.app.clearSelectedDate()
+    // ? actions.app.clearSelectedDate()
+    isSameDate(selectedDate, clickedDate)
+      ? actions.app.setSelectedDate(null)
       : actions.app.setSelectedDate(clickedDate);
+    actions.app.filterData();
   };
 
   // https://stackoverflow.com/a/47388600/4035
   render() {
     const { selectedDate } = this.props;
+
+    console.log(`calendar.selectedDate`, selectedDate);
+
     return (
       <DayPicker
         modifiers={{ highlighted: this.highlighted, selectedDate }}
@@ -44,6 +43,7 @@ const extractDates = data =>
   }, []);
 
 const mapStateToProps = state => ({
+  eventDays: extractDates(state.app.data),
   selectedDays: extractDates(state.app.filteredData),
   selectedDate: state.app.selectedDate
 });

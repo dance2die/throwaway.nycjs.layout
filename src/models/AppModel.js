@@ -1,8 +1,5 @@
 import mirror, { actions } from "mirrorx";
-
-const byDates = (key, data) => {
-  return true;
-};
+import { isSameDate } from "../utils/date";
 
 export default mirror.model({
   name: "app",
@@ -22,8 +19,22 @@ export default mirror.model({
         return acc;
       };
 
+      const byDates = (acc, [key, value]) => {
+        if (state.selectedDate) {
+          const events = value.events.filter(event =>
+            isSameDate(state.selectedDate, new Date(event.time))
+          );
+          acc[key] = { ...value, events };
+        } else {
+          acc[key] = value;
+        }
+
+        return acc;
+      };
+
       if (state.filteredData) {
-        const filteredData = Object.entries(state.data).reduce(byGroups, {});
+        let filteredData = Object.entries(state.data).reduce(byGroups, {});
+        filteredData = Object.entries(filteredData).reduce(byDates, {});
         return { ...state, filteredData };
       } else {
         return { ...state, filteredData: state.data };

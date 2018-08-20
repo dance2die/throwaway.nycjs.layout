@@ -72,17 +72,11 @@ const Meetup = styled.li``;
 const meetups = { ReactNYC: "React NYC", vueJsNYC: "Vue NYC" };
 
 class App extends Component {
-  // // Set the date selected on the calendar
-  // onDayClick = e => {
-  //   actions.app.setDate(e);
-  // };
-
   // Initialize Meetup records globally
   componentWillMount() {
     actions.app.addData(data);
     actions.app.filterData();
     actions.app.addGroups(meetups);
-    actions.app.setSelectedDate(new Date());
   }
 
   componentDidCatch(err, info) {
