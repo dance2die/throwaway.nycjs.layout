@@ -112,6 +112,7 @@ const Photo = styled.img.attrs({
   src: props => props.src
 })`
   width: 1.5em;
+  height: 1.5em;
   margin-right: 0.45em;
 `;
 

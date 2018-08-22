@@ -10,9 +10,11 @@ import PopupInfo from "./PopupInfo";
 
 // Copied from https://codesandbox.io/s/m4xq07441x
 
-const defaultLocation = {
+const defaultSettings = {
   latitude: 40.775306,
-  longitude: -73.95117
+  longitude: -73.95117,
+  zoom: 11.5,
+  pitch: 50.0
 };
 
 class Markers extends Component {
@@ -49,25 +51,71 @@ class Map extends Component {
       viewport: {
         width: window.innerWidth,
         height: window.innerHeight,
-        pitch: 50.0,
-        latitude: 40.750355,
-        longitude: -73.986755,
-        zoom: 11.5
+        pitch: defaultSettings.pitch,
+        latitude: defaultSettings.latitude,
+        longitude: defaultSettings.longitude,
+        zoom: defaultSettings.zoom
       },
+      initialFilterHeight: null,
+      isLoaded: false,
       popupInfo: null
     };
   }
 
   setViewportSizeState = () => {
+    // because https://github.com/uber/react-map-gl/issues/135
+    // you cannot enter % or vh/vw for uber's react-map-gl viewport.width/height
     const viewport = { ...this.state.viewport };
-    if (this.parentNode) {
-      const { width, height } = this.parentNode.getBoundingClientRect();
-      viewport.width = width;
-      viewport.height = height;
+    const { headerContainer, filterContainer } = this.props;
 
-      console.log(`setViewportSizeState`, width, height, this.parentNode);
-      this.setState({ viewport });
+    const { width: headerWidth, height: headerHeight } = document
+      .querySelector("header")
+      .getBoundingClientRect();
+    const {
+      width: filterWidth,
+      height: filterHeight
+    } = filterContainer.current.getBoundingClientRect();
+    const { width: footerWidth, height: footerHeight } = document
+      .querySelector("footer")
+      .getBoundingClientRect();
+
+    const offsetWidth = filterWidth;
+    // const offsetHeight = headerHeight + footerHeight;
+    // console.log(`filterContainer`, offsetWidth, offsetHeight);
+    console.log(`headerWidth, headerHeight`, headerWidth, headerHeight);
+    console.log(`filterWidth, filterHeight`, filterWidth, filterHeight);
+    console.log(`footerWidth, footerHeight`, footerWidth, footerHeight);
+
+    // let width = headerWidth - filterWidth;
+    const width = Math.floor(window.innerWidth - filterWidth);
+    let height = filterHeight - headerHeight - footerHeight;
+
+    const { initialFilterHeight } = this.state;
+
+    if (initialFilterHeight === null) {
+      this.setState({ initialFilterHeight: height });
+    } else {
+      // if (initialFilterHeight < filterHeight) {
+      //   height = filterHeight - headerHeight - footerHeight;
+      // } else if (initialFilterHeight > filterHeight) {
+      //   height = filterHeight;
+      // }
+      height = Math.floor(window.innerHeight - headerHeight - footerHeight);
     }
+    // height = viewport.height < filterHeight ? filterHeight : height;
+
+    // const height = filterHeight;
+    viewport.width = width;
+    viewport.height = height;
+    console.log(
+      `setViewportSizeState`,
+      width,
+      height,
+      viewport.width,
+      viewport.height,
+      initialFilterHeight
+    );
+    this.setState({ viewport });
   };
 
   windowResizeHandler = e => this.setViewportSizeState();
@@ -75,10 +123,6 @@ class Map extends Component {
   debouncedWindowResizeHandler = debounce(this.windowResizeHandler, 300);
 
   componentDidMount() {
-    // https://github.com/okonet/react-container-dimensions/blob/master/src/index.js
-    // because https://github.com/uber/react-map-gl/issues/135
-    // you cannot enter % or vh/vw for uber's react-map-gl viewport.width/height
-    this.parentNode = ReactDOM.findDOMNode(this).parentNode;
     this.setViewportSizeState();
     window.addEventListener("resize", this.debouncedWindowResizeHandler);
   }

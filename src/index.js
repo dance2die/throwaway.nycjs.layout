@@ -49,7 +49,6 @@ const Header = styled.header`
 const Body = styled.div`
   display: flex;
   flex: 1;
-  overflow: hidden;
 `;
 const FilterContainer = styled.aside`
   flex: 1;
@@ -59,10 +58,6 @@ const MapContainer = styled.section`
   flex: 5;
   background-color: orangered;
   align-content: stretch;
-
-  & div {
-    height: 0;
-  }
 `;
 
 const StyledMap = styled(Map)`
@@ -97,12 +92,16 @@ class App extends Component {
     console.log(`err, info`, err, info);
   }
 
+  headerContaier = React.createRef();
+  filterContainer = React.createRef();
+  footerContainer = React.createRef();
+
   render() {
     return (
       <AppContainer>
-        <Header>NYC JavaScript Meetups</Header>
+        <Header innerRef={this.headerContaier}>NYC JavaScript Meetups</Header>
         <Body>
-          <FilterContainer>
+          <FilterContainer innerRef={this.filterContainer}>
             <CalendarContainer>
               <Calendar />
             </CalendarContainer>
@@ -111,10 +110,14 @@ class App extends Component {
             </ListContainer>
           </FilterContainer>
           <MapContainer>
-            <StyledMap />
+            <StyledMap
+              // Needed to calculate Pixel dimension as Uber's MapBox requires a pixel width & height...
+              headerContainer={this.headerContaier}
+              filterContainer={this.filterContainer}
+            />
           </MapContainer>
         </Body>
-        <Footer>
+        <Footer innerRef={this.footerContainer}>
           Created By
           <a href="https://sungkim.co" target="_blank">
             Sung Kim
