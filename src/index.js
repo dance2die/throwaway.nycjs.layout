@@ -5,7 +5,8 @@
  * 3. ✅ Update Map markers according to
  *    3.1 ✅ Currently selected calendar day
  *    3.2 ✅ Currently checked group names
- * 4. 🚫 Implemente data filters (in AppModel)
+ * 4. ✅ Implemente data filters (in AppModel)
+ * 5. 🚫 Fix Layout - Height's overflowing thus showing scrollbars
  */
 
 import React, { Component, Fragment } from "react";
@@ -43,22 +44,35 @@ const Header = styled.header`
   background: gold;
   color: white;
   display: flex;
+  height: 5em;
 `;
 const Body = styled.div`
   display: flex;
   flex: 1;
+  overflow: hidden;
 `;
 const FilterContainer = styled.aside`
-  flex: 3;
+  flex: 1;
   background-color: coral;
 `;
 const MapContainer = styled.section`
   flex: 5;
   background-color: orangered;
+  align-content: stretch;
+
+  & div {
+    height: 0;
+  }
 `;
+
+const StyledMap = styled(Map)`
+  height: 100vh
+`;
+
 const Footer = styled.footer`
   background: gold;
   color: white;
+  height: 3em;
 `;
 
 const CalendarContainer = styled.div`
@@ -97,7 +111,7 @@ class App extends Component {
             </ListContainer>
           </FilterContainer>
           <MapContainer>
-            <Map />
+            <StyledMap />
           </MapContainer>
         </Body>
         <Footer>

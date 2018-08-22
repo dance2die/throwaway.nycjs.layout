@@ -25,8 +25,6 @@ class Calendar extends Component {
   render() {
     const { selectedDate } = this.props;
 
-    console.log(`calendar.selectedDate`, selectedDate);
-
     return (
       <DayPicker
         modifiers={{ highlighted: this.highlighted, selectedDate }}

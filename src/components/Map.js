@@ -64,6 +64,8 @@ class Map extends Component {
       const { width, height } = this.parentNode.getBoundingClientRect();
       viewport.width = width;
       viewport.height = height;
+
+      console.log(`setViewportSizeState`, width, height, this.parentNode);
       this.setState({ viewport });
     }
   };
