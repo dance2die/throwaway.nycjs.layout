@@ -80,13 +80,6 @@ class Map extends Component {
       .getBoundingClientRect();
 
     const offsetWidth = filterWidth;
-    // const offsetHeight = headerHeight + footerHeight;
-    // console.log(`filterContainer`, offsetWidth, offsetHeight);
-    console.log(`headerWidth, headerHeight`, headerWidth, headerHeight);
-    console.log(`filterWidth, filterHeight`, filterWidth, filterHeight);
-    console.log(`footerWidth, footerHeight`, footerWidth, footerHeight);
-
-    // let width = headerWidth - filterWidth;
     const width = Math.floor(window.innerWidth - filterWidth);
     let height = filterHeight - headerHeight - footerHeight;
 
@@ -95,26 +88,11 @@ class Map extends Component {
     if (initialFilterHeight === null) {
       this.setState({ initialFilterHeight: height });
     } else {
-      // if (initialFilterHeight < filterHeight) {
-      //   height = filterHeight - headerHeight - footerHeight;
-      // } else if (initialFilterHeight > filterHeight) {
-      //   height = filterHeight;
-      // }
       height = Math.floor(window.innerHeight - headerHeight - footerHeight);
     }
-    // height = viewport.height < filterHeight ? filterHeight : height;
 
-    // const height = filterHeight;
     viewport.width = width;
     viewport.height = height;
-    console.log(
-      `setViewportSizeState`,
-      width,
-      height,
-      viewport.width,
-      viewport.height,
-      initialFilterHeight
-    );
     this.setState({ viewport });
   };
 
