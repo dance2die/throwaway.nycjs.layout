@@ -78,13 +78,29 @@ export default mirror.model({
   },
   effects: {
     // https://github.com/mirrorjs/mirror
-    async incrementAsync() {
-      // await new Promise((resolve, reject) => {
-      //   setTimeout(() => {
-      //     resolve();
-      //   }, 1000);
-      // });
-      // actions.app.increment();
+    async addMeetups() {
+      const groups = {
+        ReactNYC: "React NYC",
+        vueJsNYC: "Vue NYC",
+        AngularNYC: "Angular NYC",
+        QueensJS: "Queens JS",
+        "NYC-JavaScript-Flatiron": "NYC JavaScript @ Flatiron",
+        "NY-JavaScript": "NY JavaScript"
+      };
+      const groupNames = Object.keys(groups).map(_ => _);
+
+      // reactnyc,vueJsNYC,NYC-JavaScript-Flatiron,NY-JavaScript,AngularNYC,QueensJS,JS-NY
+      // prettier-ignore
+      const url = `https://nycjs-meetup-server.herokuapp.com/groups/${groupNames.join(',')}`;
+      console.log(`addMeetups.url`, url);
+      fetch(url)
+        .then(_ => _.json())
+        .then(data => {
+          actions.app.addGroups(groups);
+          actions.app.addData(data);
+          actions.app.filterData();
+        })
+        .catch(err => console.log(err));
     }
   }
 });

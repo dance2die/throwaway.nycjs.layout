@@ -6,7 +6,7 @@
  *    3.1 ✅ Currently selected calendar day
  *    3.2 ✅ Currently checked group names
  * 4. ✅ Implemente data filters (in AppModel)
- * 5. 🚫 Fix Layout - Height's overflowing thus showing scrollbars
+ * 5. ✅ Fix Layout - Height's overflowing thus showing scrollbars
  */
 
 import React, { Component, Fragment } from "react";
@@ -78,14 +78,15 @@ const ListContainer = styled.div``;
 
 const Meetup = styled.li``;
 
-const meetups = { ReactNYC: "React NYC", vueJsNYC: "Vue NYC" };
+// const meetups = { ReactNYC: "React NYC", vueJsNYC: "Vue NYC" };
 
 class App extends Component {
   // Initialize Meetup records globally
-  componentWillMount() {
-    actions.app.addData(data);
-    actions.app.filterData();
-    actions.app.addGroups(meetups);
+  async componentWillMount() {
+    // actions.app.addData(data);
+    // actions.app.addGroups(meetups);
+    // actions.app.filterData();
+    await actions.app.addMeetups();
   }
 
   componentDidCatch(err, info) {

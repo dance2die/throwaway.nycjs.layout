@@ -10,11 +10,11 @@ import "react-day-picker/lib/style.css";
 // https://codesandbox.io/s/r5w1kv3k6o
 class Calendar extends Component {
   highlighted = day =>
+    this.props.eventDays &&
     this.props.eventDays.some(selectedDay => isSameDate(day, selectedDay));
 
   onDayClick = clickedDate => {
     const { selectedDate } = this.props;
-    // ? actions.app.clearSelectedDate()
     isSameDate(selectedDate, clickedDate)
       ? actions.app.setSelectedDate(null)
       : actions.app.setSelectedDate(clickedDate);
@@ -23,11 +23,14 @@ class Calendar extends Component {
 
   // https://stackoverflow.com/a/47388600/4035
   render() {
-    const { selectedDate } = this.props;
+    const { selectedDate, eventDays } = this.props;
+    const { highlighted } = this;
+
+    if (!this.props.eventDays) return null;
 
     return (
       <DayPicker
-        modifiers={{ highlighted: this.highlighted, selectedDate }}
+        modifiers={{ highlighted, selectedDate }}
         onDayClick={this.onDayClick}
       />
     );
@@ -35,6 +38,7 @@ class Calendar extends Component {
 }
 
 const extractDates = data =>
+  data &&
   Object.keys(data).reduce((acc, groupName) => {
     acc.push(...data[groupName].events.map(event => new Date(event.time)));
     return acc;
