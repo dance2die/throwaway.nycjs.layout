@@ -7,6 +7,9 @@
  *    3.2 ✅ Currently checked group names
  * 4. ✅ Implemente data filters (in AppModel)
  * 5. ✅ Fix Layout - Height's overflowing thus showing scrollbars
+ * 6. 🚫 Add a number of events next to Group list checkbox.
+ * 7. 🚫 Replace marker SVG with Meetup avatar.
+ * 999. 🚫 Make it pretty~~~
  */
 
 import React, { Component, Fragment } from "react";
