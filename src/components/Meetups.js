@@ -58,9 +58,9 @@ const getEventCountMap = data =>
   data &&
   Object.keys(data).length > 0 &&
   Object.entries(data).reduce((acc, [name, { events }]) => {
-    acc[name] = events.length;
+    acc[[name]] = events.length;
     return acc;
-  });
+  }, {});
 
 const mapStateToProps = state => ({
   selectedGroups: state.app.selectedGroups,

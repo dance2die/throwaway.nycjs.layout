@@ -11,9 +11,9 @@ import PopupInfo from "./PopupInfo";
 // Copied from https://codesandbox.io/s/m4xq07441x
 
 const defaultSettings = {
-  latitude: 40.775306,
-  longitude: -73.95117,
-  zoom: 11.5,
+  latitude: 40.74526200643681,
+  longitude: -73.96736208883843,
+  zoom: 12,
   pitch: 50.0
 };
 
