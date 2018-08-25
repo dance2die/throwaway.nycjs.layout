@@ -90,8 +90,22 @@ class Map extends Component {
       height = Math.floor(window.innerHeight - headerHeight - footerHeight);
     }
 
-    viewport.width = width;
-    viewport.height = height;
+    const isMobile = width <= filterWidth;
+
+    viewport.width = isMobile ? filterWidth : width;
+    viewport.height = isMobile ? window.innerHeight * 0.75 : height;
+
+    viewport.height =
+      viewport.height < filterHeight ? filterHeight : viewport.height;
+
+    console.log(
+      `viewport.width/filterWidth/height`,
+      width,
+      filterWidth,
+      height,
+      window.innerHeight
+    );
+
     this.setState({ viewport });
   };
 

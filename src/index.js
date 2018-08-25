@@ -53,15 +53,27 @@ const Header = styled.header`
 const Body = styled.div`
   display: flex;
   flex: 1;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 const FilterContainer = styled.aside`
   flex: 1;
   background-color: coral;
+
+  @media (max-width: 600px) {
+    order: 2;
+  }
 `;
 const MapContainer = styled.section`
   flex: 5;
   background-color: orangered;
   align-content: stretch;
+
+  @media (max-width: 600px) {
+    order: 1;
+  }
 `;
 
 const StyledMap = styled(Map)`
