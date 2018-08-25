@@ -21,7 +21,6 @@ class Markers extends Component {
   buildMarkers = data =>
     Object.keys(data).map(groupName => {
       const group = data[groupName];
-
       return group.events.map(event => (
         <Marker
           key={event.id}
