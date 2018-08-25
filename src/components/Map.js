@@ -93,7 +93,7 @@ class Map extends Component {
     const isMobile = width <= filterWidth;
 
     viewport.width = isMobile ? filterWidth : width;
-    viewport.height = isMobile ? window.innerHeight * 0.75 : height;
+    viewport.height = isMobile ? window.innerHeight * 0.65 : height;
 
     viewport.height =
       viewport.height < filterHeight ? filterHeight : viewport.height;
