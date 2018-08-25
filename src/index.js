@@ -15,7 +15,7 @@
 
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
-import styled, { injectGlobal } from "styled-components";
+import styled, { injectGlobal, css } from "styled-components";
 import mirror, { actions, connect, render } from "mirrorx";
 
 import "./models/AppModel";
@@ -45,6 +45,10 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `;
 
+const titlePadding = css`
+  padding-left: 2em;
+`;
+
 const Header = styled.header`
   // https://uigradients.com/#CoolBlues
   background: #2193b0; /* fallback for old browsers */
@@ -60,11 +64,11 @@ const Header = styled.header`
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   color: white;
-  height: 4em;
+  height: 3em;
 
   display: flex;
   align-items: center;
-  padding-left: 2em;
+  ${titlePadding} font-size: 1.3rem;
 `;
 const Body = styled.div`
   display: flex;
@@ -100,6 +104,21 @@ const Footer = styled.footer`
   background: gold;
   color: white;
   height: 3em;
+  display: flex;
+  align-items: center;
+  ${titlePadding};
+`;
+
+const Credit = styled.span`
+  font-size: 0.8rem;
+`;
+const CreditLink = styled.a.attrs({
+  href: "https://sungkim.co",
+  target: "_blank"
+})`
+  text-decoration: none;
+  color: coral;
+  margin-left: 0.5em;
 `;
 
 const CalendarContainer = styled.div`
@@ -108,16 +127,9 @@ const CalendarContainer = styled.div`
 `;
 const ListContainer = styled.div``;
 
-const Meetup = styled.li``;
-
-// const meetups = { ReactNYC: "React NYC", vueJsNYC: "Vue NYC" };
-
 class App extends Component {
   // Initialize Meetup records globally
   async componentWillMount() {
-    // actions.app.addData(data);
-    // actions.app.addGroups(meetups);
-    // actions.app.filterData();
     await actions.app.addMeetups();
   }
 
@@ -151,10 +163,10 @@ class App extends Component {
           </MapContainer>
         </Body>
         <Footer innerRef={this.footerContainer}>
-          Created By
-          <a href="https://sungkim.co" target="_blank">
-            Sung Kim
-          </a>
+          <Credit>
+            Created with ♥️️ By
+            <CreditLink>Sung Kim</CreditLink>
+          </Credit>
         </Footer>
       </AppContainer>
     );
