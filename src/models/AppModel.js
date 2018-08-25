@@ -92,7 +92,7 @@ export default mirror.model({
       // reactnyc,vueJsNYC,NYC-JavaScript-Flatiron,NY-JavaScript,AngularNYC,QueensJS,JS-NY
       // prettier-ignore
       const url = `https://nycjs-meetup-server.herokuapp.com/groups/${groupNames.join(',')}`;
-      console.log(`addMeetups.url`, url);
+      // console.log(`addMeetups.url`, url);
       fetch(url)
         .then(_ => _.json())
         .then(data => {

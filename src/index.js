@@ -35,6 +35,7 @@ injectGlobal`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
@@ -45,10 +46,25 @@ const AppContainer = styled.div`
 `;
 
 const Header = styled.header`
-  background: gold;
+  // https://uigradients.com/#CoolBlues
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: white;
+  height: 4em;
+
   display: flex;
-  height: 5em;
+  align-items: center;
+  padding-left: 2em;
 `;
 const Body = styled.div`
   display: flex;
@@ -60,7 +76,7 @@ const Body = styled.div`
 `;
 const FilterContainer = styled.aside`
   flex: 1;
-  background-color: coral;
+  background-color: white;
 
   @media (max-width: 600px) {
     order: 2;
@@ -77,7 +93,7 @@ const MapContainer = styled.section`
 `;
 
 const StyledMap = styled(Map)`
-  height: 100vh
+  height: 100vh;
 `;
 
 const Footer = styled.footer`

@@ -98,13 +98,13 @@ class Map extends Component {
     // viewport.height =
     //   viewport.height < filterHeight ? filterHeight : viewport.height;
 
-    console.log(
-      `viewport.width/filterWidth/height`,
-      width,
-      filterWidth,
-      height,
-      window.innerHeight
-    );
+    // console.log(
+    //   `viewport.width/filterWidth/height`,
+    //   width,
+    //   filterWidth,
+    //   height,
+    //   window.innerHeight
+    // );
 
     this.setState({ viewport });
   };
