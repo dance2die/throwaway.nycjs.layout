@@ -11,6 +11,8 @@
  * 7. 🚫 Replace marker SVG with Meetup avatar.
  *      👆 causes an infinite loop... 🤔 abort for now.
  * 999. 🚫 Make it pretty~~~
+ * 8. 🚫 Fitt's law - the "x" to close the location cards is very small, make it bigger
+ *     https://www.reddit.com/r/reactjs/comments/9a3udt/when_you_are_visiting_nyc_the_big_apple/e4slccc
  */
 
 import React, { Component, Fragment } from "react";
