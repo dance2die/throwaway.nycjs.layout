@@ -13,7 +13,18 @@
   color: violet;
 }
 
+.mapboxgl-popup-content {
+  display: flex;
+}
+
 .mapboxgl-popup-close-button {
+  /* Move it to the right */
+  order: 2;
+  position: inherit;
+
+  margin-top: -0.3em;
+  margin-right: -0.3em;
+
   width: 1em;
   height: 1em;
   font-size: 2em;
