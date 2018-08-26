@@ -176,7 +176,9 @@ const PopupInfo = ({ group, event }) => {
     <PopupContainer>
       <Header>
         <HeaderTitle>
-          <Photo src={group_photo.thumb_link} />
+          {group_photo && group_photo.thumb_link ? (
+            <Photo src={group_photo.thumb_link} />
+          ) : null}
           <EventLink href={event_url}>
             <span className="popup_event_name">{eventName}</span>
           </EventLink>
