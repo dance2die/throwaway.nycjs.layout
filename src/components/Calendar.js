@@ -45,7 +45,7 @@ const extractDates = data =>
   }, []);
 
 const mapStateToProps = state => ({
-  eventDays: extractDates(state.app.data),
+  eventDays: extractDates(state.app.filteredData),
   selectedDays: extractDates(state.app.filteredData),
   selectedDate: state.app.selectedDate
 });
