@@ -48,8 +48,8 @@ class Map extends Component {
 
     this.state = {
       viewport: {
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: 0,
+        height: 0,
         pitch: defaultSettings.pitch,
         latitude: defaultSettings.latitude,
         longitude: defaultSettings.longitude,
@@ -70,10 +70,18 @@ class Map extends Component {
     const { width: headerWidth, height: headerHeight } = document
       .querySelector("header")
       .getBoundingClientRect();
-    const {
-      width: filterWidth,
-      height: filterHeight
-    } = filterContainer.current.getBoundingClientRect();
+    // const {
+    //   width: filterWidth,
+    //   height: filterHeight
+    // } = filterContainer.current.getBoundingClientRect();
+    const { width: filterWidth, height: filterHeight } = document
+      .querySelector("aside")
+      .getBoundingClientRect();
+    // if (!document.querySelector(".DayPicker-Months")) return;
+    // const { width: filterWidth, height: filterHeight } = document
+    //   .querySelector(".DayPicker-Months")
+    //   .getBoundingClientRect();
+
     const { width: footerWidth, height: footerHeight } = document
       .querySelector("footer")
       .getBoundingClientRect();
@@ -89,22 +97,24 @@ class Map extends Component {
     } else {
       height = Math.floor(window.innerHeight - headerHeight - footerHeight);
     }
+    // height = Math.floor(window.innerHeight - headerHeight - footerHeight);
 
     const isMobile = width <= filterWidth;
 
-    viewport.width = isMobile ? filterWidth : width;
-    viewport.height = isMobile ? window.innerHeight * 0.65 : height;
+    viewport.width = Math.floor(isMobile ? filterWidth : width);
+    viewport.height = Math.floor(isMobile ? window.innerHeight * 0.65 : height);
 
     // viewport.height =
     //   viewport.height < filterHeight ? filterHeight : viewport.height;
 
+    // // prettier-ignore
     // console.log(
-    //   `viewport.width/filterWidth/height`,
-    //   width,
-    //   filterWidth,
-    //   height,
-    //   window.innerHeight
-    // );
+    //   `filterWidth,window.innerWidth,viewport.width`,
+    //   filterWidth, window.innerWidth, viewport.width);
+    // // prettier-ignore
+    // console.log(
+    //   `filterHeight,window.innerHeight,viewport.height`,
+    //   filterHeight,window.innerHeight,viewport.height);
 
     this.setState({ viewport });
   };
