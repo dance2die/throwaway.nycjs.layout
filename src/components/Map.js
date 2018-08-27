@@ -104,8 +104,8 @@ class Map extends Component {
     viewport.width = Math.floor(isMobile ? filterWidth : width);
     viewport.height = Math.floor(isMobile ? window.innerHeight * 0.65 : height);
 
-    // viewport.height =
-    //   viewport.height < filterHeight ? filterHeight : viewport.height;
+    viewport.height =
+      viewport.height < filterHeight ? filterHeight : viewport.height;
 
     // // prettier-ignore
     // console.log(
