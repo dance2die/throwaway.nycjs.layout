@@ -140,15 +140,13 @@ class App extends Component {
   }
 
   headerContaier = React.createRef();
-  filterContainer = React.createRef();
-  footerContainer = React.createRef();
 
   render() {
     return (
       <AppContainer>
         <Header innerRef={this.headerContaier}>NYC JavaScript Meetups</Header>
         <Body>
-          <FilterContainer innerRef={this.filterContainer}>
+          <FilterContainer>
             <CalendarContainer>
               <Calendar />
             </CalendarContainer>
@@ -160,11 +158,10 @@ class App extends Component {
             <StyledMap
               // Needed to calculate Pixel dimension as Uber's MapBox requires a pixel width & height...
               headerContainer={this.headerContaier}
-              filterContainer={this.filterContainer}
             />
           </MapContainer>
         </Body>
-        <Footer innerRef={this.footerContainer}>
+        <Footer>
           <Credit>
             Created with ♥️️ By
             <CreditLink>Sung Kim</CreditLink>

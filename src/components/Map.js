@@ -70,17 +70,9 @@ class Map extends Component {
     const { width: headerWidth, height: headerHeight } = document
       .querySelector("header")
       .getBoundingClientRect();
-    // const {
-    //   width: filterWidth,
-    //   height: filterHeight
-    // } = filterContainer.current.getBoundingClientRect();
     const { width: filterWidth, height: filterHeight } = document
       .querySelector("aside")
       .getBoundingClientRect();
-    // if (!document.querySelector(".DayPicker-Months")) return;
-    // const { width: filterWidth, height: filterHeight } = document
-    //   .querySelector(".DayPicker-Months")
-    //   .getBoundingClientRect();
 
     const { width: footerWidth, height: footerHeight } = document
       .querySelector("footer")
@@ -125,7 +117,10 @@ class Map extends Component {
 
   componentDidMount() {
     this.setViewportSizeState();
-    window.addEventListener("resize", this.debouncedWindowResizeHandler);
+    // https://developers.google.com/web/tools/lighthouse/audits/passive-event-listeners
+    window.addEventListener("resize", this.debouncedWindowResizeHandler, {
+      passive: true
+    });
   }
 
   componentWillUnmount() {
