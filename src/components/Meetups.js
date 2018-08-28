@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { connect, actions } from "mirrorx";
 

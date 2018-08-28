@@ -15,17 +15,14 @@
  *     https://www.reddit.com/r/reactjs/comments/9a3udt/when_you_are_visiting_nyc_the_big_apple/e4slccc
  */
 
-import React, { Component, Fragment } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from "react";
 import styled, { injectGlobal, css } from "styled-components";
-import mirror, { actions, connect, render } from "mirrorx";
+import { actions, connect, render } from "mirrorx";
 
 import "./models/AppModel";
 import Calendar from "./components/Calendar";
 import Meetups from "./components/Meetups";
 import Map from "./components/Map";
-
-import data from "./input.json";
 
 import "./styles.css";
 

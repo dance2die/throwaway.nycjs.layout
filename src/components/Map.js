@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
 import ReactMapGL, { Marker, NavigationControl, Popup } from "react-map-gl";
 import debounce from "tiny-debounce";
-import { actions, connect } from "mirrorx";
+import { connect } from "mirrorx";
 import "../models/AppModel";
 
-import ReactDOM from "react-dom";
 import CityPin from "./CityPin";
 import PopupInfo from "./PopupInfo";
 
@@ -65,7 +64,6 @@ class Map extends Component {
     // because https://github.com/uber/react-map-gl/issues/135
     // you cannot enter % or vh/vw for uber's react-map-gl viewport.width/height
     const viewport = { ...this.state.viewport };
-    const { headerContainer, filterContainer } = this.props;
 
     const { width: headerWidth, height: headerHeight } = document
       .querySelector("header")

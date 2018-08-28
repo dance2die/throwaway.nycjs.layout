@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import DayPicker from "react-day-picker";
 import { connect, actions } from "mirrorx";
 
@@ -26,7 +26,7 @@ class Calendar extends Component {
     const { selectedDate, eventDays } = this.props;
     const { highlighted } = this;
 
-    if (!this.props.eventDays) return null;
+    if (!eventDays) return null;
 
     return (
       <DayPicker
