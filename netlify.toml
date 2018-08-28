@@ -1,1 +1,7 @@
-https://uploads.codesandbox.io/uploads/user/2abeaba2-8c56-4c99-8e93-bf662dab119a/jMDW-netlify.toml
+[[headers]]
+for = "/*"
+[headers.values]
+    X - Frame - Options = "DENY"
+    X - XSS - Protection = "1; mode=block"
+Referrer - Policy = "no-referrer"
+X - Content - Type - Options = "nosniff"
