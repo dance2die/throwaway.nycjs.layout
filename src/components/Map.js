@@ -17,10 +17,13 @@ const defaultSettings = {
 };
 
 class Markers extends Component {
+  hasLocation = ({ venue }) => venue && venue.lat && venue.lon;
+
   buildMarkers = data =>
     Object.keys(data).map(groupName => {
       const group = data[groupName];
-      return group.events.map(event => (
+
+      return group.events.filter(this.hasLocation).map(event => (
         <Marker
           key={event.id}
           latitude={event.venue.lat}
@@ -161,6 +164,7 @@ class Map extends Component {
       <div>
         <ReactMapGL
           style={{ textAlign: "left" }}
+          mapStyle="mapbox://styles/mapbox/bright-v9"
           mapboxApiAccessToken={
             "pk.eyJ1IjoiZGFuY2UyZGllIiwiYSI6ImNqa3Voa254bDk1bjEzcW1sOTFlbjl0eW8ifQ.d72JL668F0_uoLLK1lqhGQ"
           }
